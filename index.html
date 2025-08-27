@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Liên hệ & Mạng xã hội • Công ty ABC</title>
+
+  <!-- Màu thanh trình duyệt (Android) và favicon -->
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="logo.png">
+
+  <style>
+    :root {
+      --bg:#0f172a; --card:#111827; --fg:#e2e8f0; --muted:#94a3b8; --bd:#334155;
+    }
+    * { box-sizing: border-box }
+    html, body { height:100% }
+    body {
+      margin:0; background:var(--bg); color:var(--fg);
+      font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Chiều cao an toàn cho mobile (dvh/svh) */
+    main{
+      min-height: 100svh;           /* iOS Safari mới */
+      min-height: 100dvh;           /* Android/Chrome mới */
+      display: grid; place-items: center;
+      padding: 18px;
+    }
+
+    .card{
+      width: min(620px, 94vw);
+      background: var(--card);
+      border-radius: 20px;
+      padding: max(22px, env(safe-area-inset-top)) 18px 22px 18px; /* safe-area */
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+
+    .brand{ display:flex; gap:14px; align-items:center; margin-bottom:8px }
+    .brand img{ width:56px; height:56px; border-radius:12px; object-fit:cover; background:#0ea5e9 }
+    h1{ font-size:20px; margin:0 0 4px }
+    p{ margin:0 0 16px; color:var(--muted) }
+
+    .grid{ display:grid; gap:12px }
+
+    .btn{
+      display:flex; align-items:center; justify-content:center;
+      padding:14px 15px; border-radius:12px;
+      border:1px solid var(--bd); background:#0b1220; color:var(--fg);
+      text-decoration:none; min-height:48px;     /* điểm chạm >=48px */
+      -webkit-tap-highlight-color: transparent;  /* tắt viền xanh iOS */
+      touch-action: manipulation;                /* tối ưu chạm */
+      transition: transform .05s ease, background .2s ease, border .2s ease;
+    }
+    .btn:hover{ background:#0f1a2e; border-color:#475569 }
+    .btn:active{ transform: translateY(1px) }
+
+    /* Tôn trọng người dùng tắt animation */
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition: none }
+    }
+
+    small{ display:block; margin-top:16px; color:var(--muted); text-align:center }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" role="region" aria-label="Liên hệ & mạng xã hội">
+      <div class="brand">
+        <!-- Thay logo.png bằng logo công ty -->
+        <img src="logo.png" alt="Logo Công ty ABC">
+        <div>
+          <h1>CÔNG TY ABC</h1>
+          <p>Quét QR hoặc bấm nút để mở đúng tài khoản/app</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Thay các URL bên dưới bằng tài khoản thật của bạn -->
+        <a class="btn" href="https://zalo.me/officialaccount" target="_blank" rel="noopener" aria-label="Zalo Official">Zalo Official</a>
+        <a class="btn" href="https://zalo.me/0901234567" target="_blank" rel="noopener" aria-label="Chat Zalo 0901 234 567">Chat Zalo 0901 234 567</a>
+
+        <a class="btn" href="https://www.youtube.com/@yourchannel" target="_blank" rel="noopener" aria-label="YouTube Channel">YouTube Channel</a>
+        <a class="btn" href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook Page">Facebook Page</a>
+        <a class="btn" href="https://www.tiktok.com/@yourname" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+        <a class="btn" href="https://www.instagram.com/yourname/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+
+        <a class="btn" href="https://maps.app.goo.gl/yourplaceid" target="_blank" rel="noopener" aria-label="Google Maps">Google Maps</a>
+        <a class="btn" href="tel:+84901234567" aria-label="Gọi số 0901 234 567">Gọi: 0901 234 567</a>
+        <a class="btn" href="mailto:sales@yourcompany.vn" aria-label="Gửi email tới sales@yourcompany.vn">Email: sales@yourcompany.vn</a>
+
+        <!-- Tuỳ chọn nâng cao cho Android (ép mở app). Chỉ dùng khi chắc người dùng dùng Android và có app:
+        <a class="btn" href="intent://www.youtube.com/channel/CHANNEL_ID#Intent;package=com.google.android.youtube;scheme=https;end">
+          Mở trong YouTube (Android)
+        </a>
+        -->
+      </div>
+
+      <small>© 2025 Công ty ABC</small>
+    </section>
+  </main>
+</body>
+</html>
